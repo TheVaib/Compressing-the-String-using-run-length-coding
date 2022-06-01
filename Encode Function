@@ -1,0 +1,20 @@
+def encode(message):
+    result = ''
+    i = 0
+    while(i <= len(message)-1):
+        count = 1
+        ch = message[i]
+        while (i < len(message)-1):
+            if (message[i] == message[i+1]):
+                count +=1
+                i +=1
+            else:
+                break
+            
+        result += str(count) + ch
+        i += 1
+    return result
+
+encoded_message= input("Please provide encoded string: ")
+data = encode(encoded_message)
+print(f"The Compressed run length code is: {data}")
